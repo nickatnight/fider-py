@@ -1,0 +1,50 @@
+volumes:
+  db-data:
+
+services:
+  db:
+    restart: always
+    image: postgres:17
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U test -d fider"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test!rules
+      POSTGRES_DB: fider
+      POSTGRES_HOST: db
+
+  mailhog:
+    image: mailhog/mailhog
+    restart: always
+    ports:
+      - "8125:8025"
+
+  app:
+    restart: always
+    image: getfider/fider:stable
+    ports:
+      - "80:3000"
+    environment:
+      # Public Host Name
+      BASE_URL: http://localhost
+
+      # Connection string to the PostgreSQL database
+      DATABASE_URL: postgres://test:test!rules@db:5432/fider?sslmode=disable
+
+      # Generate a secure secret, for example using https://jwtsecret.com
+      JWT_SECRET: VERY_STRONG_SECRET_SHOULD_BE_USED_HERE
+
+      # From which account e-mails will be sent
+      EMAIL_NOREPLY: noreply@yourdomain.com
+
+      EMAIL_SMTP_HOST: mailhog
+      EMAIL_SMTP_PORT: 1025
+
+    depends_on:
+      db:
+        condition: service_healthy
