@@ -42,14 +42,14 @@ jobs:
       - name: Run coverage
         run: uv run pytest --cov-report=xml:coverage.xml --cov=fiderpy/ tests/
 
-      # - name: Codecov
-      #   if: success()
-      #   uses: codecov/codecov-action@v4
-      #   env:
-      #     CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-      #   with:
-      #     files: coverage.xml
-      #     flags: unittests-py${{ matrix.python-version }}
+      - name: Codecov
+        if: success()
+        uses: codecov/codecov-action@v4
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        with:
+          files: coverage.xml
+          flags: unittests-py${{ matrix.python-version }}
 
   create-release:
     name: Create GitHub Release

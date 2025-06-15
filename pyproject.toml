@@ -98,7 +98,7 @@ skip = 'pyproject.toml'
 ignore-words-list = 'selectin,'
 
 [tool.coverage.report]
-# fail_under = 75
+fail_under = 75
 
 [tool.coverage.run]
 omit = ['*tests/*', '*interfaces.py']

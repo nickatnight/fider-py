@@ -3,9 +3,9 @@
     <a href="https://github.com/nickatnight/fider-py/actions">
         <img alt="GitHub Actions status" src="https://github.com/nickatnight/fider-py/actions/workflows/main.yml/badge.svg">
     </a>
-    <!-- <a href="https://codecov.io/gh/nickatnight/fider-py">
-        <img alt="Coverage" src="https://codecov.io/gh/nickatnight/fider-py/branch/main/graph/badge.svg?token=I20H47UKRK"/>
-    </a> -->
+    <a href="https://codecov.io/gh/nickatnight/fider-py">
+        <img alt="Coverage" src="https://codecov.io/gh/nickatnight/fider-py/branch/main/graph/badge.svg?token=HgBDCeK3pF"/>
+    </a>
     <a href="https://pypi.org/project/fider-py/">
         <img alt="PyPi Shield" src="https://img.shields.io/pypi/v/fider-py">
     </a>
@@ -48,3 +48,4 @@ TBD
 - [ ] Add Tags
 - [ ] Add Invitations
 - [ ] Add base docs site
+- [x] Add Codecov
