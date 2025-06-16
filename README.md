@@ -13,9 +13,6 @@
         <img alt="Python Versions Shield" src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white">
     </a>
     <a href="https://fider-py.readthedocs.io/en/latest/"><img alt="Read The Docs Badge" src="https://img.shields.io/readthedocs/fider-py"></a>
-    <!-- <a href="https://pypi.org/project/fider-py/">
-        <img alt="Download Shield" src="https://img.shields.io/pypi/dm/fider-py">
-    </a> -->
     <a href="https://github.com/nickatnight/fider-py/blob/master/LICENSE">
         <img alt="License Shield" src="https://img.shields.io/github/license/nickatnight/fider-py">
     </a>
@@ -65,7 +62,7 @@ FiderAPIResponse(
             comments_count=0,
             status="open",
             response=None,
-            tags=[]
+            tags=["test"]
         ),
     ],
     errors=None
