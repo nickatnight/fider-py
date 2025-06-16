@@ -45,18 +45,18 @@ def test_service_edit_tag_http_called_with_expected_args() -> None:
     mock_http = MagicMock(send=MagicMock())
     service = TagsService(client=TagsClient(http=mock_http))
     edit_request = request.EditTagRequest(
+        slug="test-tag",
         name="Updated Tag",
         color="063589",
         is_public=False,
     )
-    slug = "test-tag"
 
     # Act
-    _ = service.edit_tag(slug=slug, request=edit_request)
+    _ = service.edit_tag(request=edit_request)
 
     # Assert
     mock_http.send.assert_called_once_with(
-        path=f"{FiderApiUrls.TAGS}/{slug}",
+        path=f"{FiderApiUrls.TAGS}/{edit_request.slug}",
         method="PUT",
         json={"name": "Updated Tag", "color": "063589", "isPublic": False},
     )
@@ -66,14 +66,16 @@ def test_service_delete_tag_http_called_with_expected_args() -> None:
     # Arrange
     mock_http = MagicMock(send=MagicMock())
     service = TagsService(client=TagsClient(http=mock_http))
-    slug = "test-tag"
+    delete_request = request.DeleteTagRequest(
+        slug="test-tag",
+    )
 
     # Act
-    _ = service.delete_tag(slug=slug)
+    _ = service.delete_tag(request=delete_request)
 
     # Assert
     mock_http.send.assert_called_once_with(
-        path=f"{FiderApiUrls.TAGS}/{slug}",
+        path=f"{FiderApiUrls.TAGS}/{delete_request.slug}",
         method="DELETE",
     )
 

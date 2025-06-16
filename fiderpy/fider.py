@@ -5,12 +5,76 @@ from fiderpy.v1 import resources
 from fiderpy.v1.utils.http import RequestsClient
 
 
-__version__ = "0.0.1"
+__version__ = "0.0.3"
 logger = logging.getLogger(__name__)
 
 
 class Fider:
     """API Client for Fider
+
+    Example:
+
+    .. code-block:: python
+
+        >>> from fiderpy import Fider
+
+        # Initialize the client
+        >>> fider = Fider(host="https://demo.fider.io", api_key="1234567890")
+
+        # Get all posts
+        >>> fider.posts.get_posts()
+
+        # Get a single post
+        >>> fider.posts.get_post(request=GetPostRequest(number=1))
+
+        # Get all users
+        >>> fider.users.get_users()
+
+        # Create a new user
+        >>> fider.users.create_user(request=CreateUserRequest(name="John Doe", email="john@example.com", reference="1234567890"))
+
+        # Create a new post
+        >>> fider.posts.create_post(request=CreatePostRequest(title="Test Post", description="This is a test post"))
+
+        # Delete a post
+        >>> fider.posts.delete_post(request=DeletePostRequest(number=1))
+
+        # Get all votes
+        >>> fider.votes.get_votes(request=GetVotesRequest(number=1))
+
+        # Create a vote
+        >>> fider.votes.create_vote(request=CreateVoteRequest(number=1))
+
+        # Delete a vote
+        >>> fider.votes.delete_vote(request=DeleteVoteRequest(number=1))
+
+        # Get all comments
+        >>> fider.comments.get_comments(request=GetCommentsRequest(number=1))
+
+        # Get a single comment
+        >>> fider.comments.get_comment(request=GetCommentRequest(number=1, id=1))
+
+        # Create a comment
+        >>> fider.comments.create_comment(request=CreateCommentRequest(number=1, content="This is a test comment"))
+
+        # Edit a comment
+        >>> fider.comments.edit_comment(request=EditCommentRequest(number=1, id=1, content="This is a test comment"))
+
+        # Delete a comment
+        >>> fider.comments.delete_comment(request=DeleteCommentRequest(number=1, id=1))
+
+        # Get all tags
+        >>> fider.tags.get_tags()
+
+        # Create a tag
+        >>> fider.tags.create_tag(request=CreateTagRequest(name="Test Tag", color="#FF0000", is_public=True))
+
+        # Edit a tag
+        >>> fider.tags.edit_tag(request=EditTagRequest(slug="test-tag", name="Test Tag", color="#FF0000", is_public=True))
+
+        # Delete a tag
+        >>> fider.tags.delete_tag(request=DeleteTagRequest(slug="test-tag"))
+
 
     :param host:            Base URL of the Fider instance (no trailing slash)
     :param api_key:         API key for Fider. See here https://docs.fider.io/api/authentication

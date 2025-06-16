@@ -14,6 +14,7 @@ class CreateTagRequest:
 class EditTagRequest:
     """Represents a request to edit an existing tag."""
 
+    slug: str
     name: str
     color: str
     is_public: bool
@@ -24,4 +25,11 @@ class TagPostRequest:
     """Represents a request to tag a post."""
 
     number: int
+    slug: str
+
+
+@dataclass
+class DeleteTagRequest:
+    """Represents a request to delete a tag."""
+
     slug: str

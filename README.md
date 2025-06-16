@@ -70,14 +70,4 @@ FiderAPIResponse(
 ```
 
 ## Documentation
-TBD
-
-## TODO
-- [x] Add Votes
-- [x] Add Comments
-- [x] Add Users
-- [x] Add Tags
-- [ ] Add Invitations
-- [x] Add base docs site
-- [x] Add Codecov
-- [x] Add PyPI
+See full documentation with examples [here](https://fider-py.readthedocs.io/en/latest/).
