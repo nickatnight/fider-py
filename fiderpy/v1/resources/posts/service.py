@@ -25,7 +25,7 @@ class PostsService:
     def get_posts(
         self, request: request.GetPostsRequest = request.GetPostsRequest()
     ) -> FiderAPIResponse[list[response.Post]]:
-        params: dict[str, Any] = {"params": {"limit": request.limit}}
+        params: dict[str, Any] = {"limit": request.limit}
 
         if request.query:
             params["query"] = request.query

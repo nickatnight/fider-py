@@ -23,14 +23,14 @@ def as_fider(
     :return:                    Response domain object
     """
 
-    def decorator_as_result(func: F) -> F:
+    def decorator_as_fider(func: F) -> F:
         @functools.wraps(func)
-        def wrapper_as_result(*args: Any, **kwargs: Any) -> FiderAPIResponse[T]:
+        def wrapper_as_fider(*args: Any, **kwargs: Any) -> FiderAPIResponse[T]:
             # Inject user_id into request dict if both are present in order to impersonate the user
             user_id = kwargs.get("user_id")
             request = kwargs.get("request")
             message = "Successfully fetched data!"
-            data: T
+            data: Optional[T] = None
             errors: Optional[list[FiderError]] = None
 
             if user_id is not None and isinstance(request, dict):
@@ -58,6 +58,6 @@ def as_fider(
 
             return FiderAPIResponse(message=message, data=data, errors=errors)
 
-        return cast(F, wrapper_as_result)
+        return cast(F, wrapper_as_fider)
 
-    return decorator_as_result
+    return decorator_as_fider

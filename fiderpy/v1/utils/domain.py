@@ -14,5 +14,5 @@ class FiderError:
 @dataclass
 class FiderAPIResponse(Generic[T]):
     message: str
-    data: T
+    data: T | None
     errors: list[FiderError] | None

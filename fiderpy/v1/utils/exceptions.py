@@ -14,7 +14,3 @@ class FiderRequestError(BaseFiderError):
         super().__init__(message)
 
         self.response = response
-
-
-class FiderClientError(BaseFiderError):
-    pass

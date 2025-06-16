@@ -22,7 +22,7 @@
 </p>
 
 ## Features
-- 🪙 **Fider** [api routes](https://docs.fider.io/api/overview), including current beta
+- 🗣️ **Fider** [api routes](https://docs.fider.io/api/overview), including current beta
 - ♻️ **Retry Strategy** Sensible defaults to reliably retry/back-off fetching data from coingecko
 - ✏️ **Code Formatting** Fully typed with [mypy](https://mypy-lang.org/) and code formatters [black](https://github.com/psf/black) / [isort](https://pycqa.github.io/isort/)
 - ⚒️ **Modern tooling** using [uv](https://docs.astral.sh/uv/), [ruff](https://docs.astral.sh/ruff/), and [pre-commit](https://pre-commit.com/)
