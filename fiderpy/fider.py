@@ -14,6 +14,7 @@ class Fider:
 
     :param host:            Base URL of the Fider instance (no trailing slash)
     :param api_key:         API key for Fider. See here https://docs.fider.io/api/authentication
+    :param api_version:     API version to use. Defaults to "v1"
     """
 
     def __init__(

@@ -12,7 +12,7 @@
     <a href="https://www.python.org/downloads/">
         <img alt="Python Versions Shield" src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white">
     </a>
-    <!-- <a href="https://fider-py.readthedocs.io/en/stable/"><img alt="Read The Docs Badge" src="https://img.shields.io/readthedocs/fider-py"></a> -->
+    <a href="https://fider-py.readthedocs.io/en/latest/"><img alt="Read The Docs Badge" src="https://img.shields.io/readthedocs/fider-py"></a>
     <!-- <a href="https://pypi.org/project/fider-py/">
         <img alt="Download Shield" src="https://img.shields.io/pypi/dm/fider-py">
     </a> -->

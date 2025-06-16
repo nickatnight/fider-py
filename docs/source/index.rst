@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Fider Python: The Python Wrapper for Fider API
-==================================================
+Fider Python: The Python Wrapper for Fider.io API
+=================================================
 
 Fider Python documentation is organized into the following sections:
 
