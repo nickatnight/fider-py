@@ -17,7 +17,7 @@ def as_fider(
     success: Optional[type[IAdapter[A, T]]] = None,
 ) -> Callable[[F], F]:
     """
-    Decorator to adapt a Fider API response to a domain object.
+    Decorator to adapt a Fider API response to a consistent response domain object.
 
     :param success:             Success response adapter
     :return:                    Response domain object
@@ -51,10 +51,10 @@ def as_fider(
             except Exception as err:
                 errors = [FiderError(message=f"Unexpected error: {err}")]
             else:
+                data = cast(T, response_json)
+
                 if success:
                     data = success.to_domain(obj=response_json)
-                else:
-                    data = cast(T, response_json)
 
             return FiderAPIResponse(message=message, data=data, errors=errors)
 

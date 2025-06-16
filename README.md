@@ -36,7 +36,41 @@ $ pip install fider-py
 ```
 
 ## Usage
-TBD
+
+```python
+>>> from fiderpy import Fider
+
+# unauthenticated client
+>>> client = Fider()
+
+# all API responses are wrapped in a FiderAPIResponse instance
+>>> client.posts.get_posts()  # default limit is 30
+FiderAPIResponse(
+    message="Successfully fetched data!",
+    data=[
+        Post(
+            id=1,
+            number=1,
+            title="Test Post",
+            slug="test-post",
+            description="This is a test post",
+            created_at="2021-01-01T00:00:00Z",
+            user=User(
+                id=1,
+                name="John Doe",
+                role="admin"
+            ),
+            has_voted=False,
+            votes_count=0,
+            comments_count=0,
+            status="open",
+            response=None,
+            tags=[]
+        ),
+    ],
+    errors=None
+)
+```
 
 ## Documentation
 TBD
