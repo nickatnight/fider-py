@@ -1,6 +1,6 @@
 [project]
 name = "fider-py"
-version = "0.0.2"
+version = "0.0.4"
 description = "Python SDK for Fider.io v1 api"
 readme = "README.md"
 requires-python = ">=3.10"
