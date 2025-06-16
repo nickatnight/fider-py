@@ -58,3 +58,9 @@ class Fider:
         client = resources.CommentsClient(http=self._http)
 
         return resources.CommentsService(client=client)
+
+    @property
+    def tags(self) -> resources.TagsService:
+        client = resources.TagsClient(http=self._http)
+
+        return resources.TagsService(client=client)

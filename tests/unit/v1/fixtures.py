@@ -2,7 +2,13 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from fiderpy.v1.resources import CommentsClient, PostsClient, UsersClient, VotesClient
+from fiderpy.v1.resources import (
+    CommentsClient,
+    PostsClient,
+    TagsClient,
+    UsersClient,
+    VotesClient,
+)
 
 
 @pytest.fixture
@@ -23,3 +29,8 @@ def mock_users_client() -> UsersClient:
 @pytest.fixture
 def mock_comments_client() -> CommentsClient:
     return CommentsClient(http=MagicMock())
+
+
+@pytest.fixture
+def mock_tags_client() -> TagsClient:
+    return TagsClient(http=MagicMock())

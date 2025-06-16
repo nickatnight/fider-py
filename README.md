@@ -41,7 +41,7 @@ $ pip install fider-py
 >>> from fiderpy import Fider
 
 # unauthenticated client
->>> client = Fider()
+>>> client = Fider(host="https://demo.fider.io")
 
 # all API responses are wrapped in a FiderAPIResponse instance
 >>> client.posts.get_posts()  # default limit is 30
@@ -79,7 +79,7 @@ TBD
 - [x] Add Votes
 - [x] Add Comments
 - [x] Add Users
-- [ ] Add Tags
+- [x] Add Tags
 - [ ] Add Invitations
 - [ ] Add base docs site
 - [x] Add Codecov

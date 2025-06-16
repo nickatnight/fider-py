@@ -2,6 +2,8 @@ from .comments.client import CommentsClient
 from .comments.service import CommentsService
 from .posts.client import PostsClient
 from .posts.service import PostsService
+from .tags.client import TagsClient
+from .tags.service import TagsService
 from .users.client import UsersClient
 from .users.service import UsersService
 from .votes.client import VotesClient
@@ -13,6 +15,8 @@ __all__ = [
     "CommentsService",
     "PostsClient",
     "PostsService",
+    "TagsClient",
+    "TagsService",
     "UsersClient",
     "UsersService",
     "VotesClient",
