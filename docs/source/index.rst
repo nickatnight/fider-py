@@ -9,6 +9,7 @@ Fider Python: The Python Wrapper for Fider API
 Fider Python documentation is organized into the following sections:
 
 - :ref:`getting_started`
+- :ref:`code_overview`
 - :ref:`package_info`
 
 Documentation Conventions
@@ -25,6 +26,14 @@ application.
 
     getting_started/quick_start
     getting_started/installation
+
+.. _code_overview:
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Code Overview
+
+    code_overview/client
 
 .. _package_info:
 
