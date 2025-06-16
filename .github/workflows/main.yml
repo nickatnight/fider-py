@@ -60,3 +60,31 @@ jobs:
     uses: nickatnight/gha-workflows/.github/workflows/create-release.yml@main
     secrets:
       token: ${{ secrets.GITHUB_TOKEN }}
+
+  upload-release-to-pypi:
+    needs: [unit-tests]
+    name: upload release to PyPI
+    runs-on: ubuntu-latest
+    environment: pypi
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          # Install a specific version of uv.
+          version: "0.6.11"
+
+      - name: Set up Python
+        run: uv python install
+
+      - name: Install the project
+        run: uv sync
+
+      - name: Build the package
+        run: uv build
+
+      - name: Publish package distributions to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1

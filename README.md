@@ -81,5 +81,6 @@ TBD
 - [x] Add Users
 - [x] Add Tags
 - [ ] Add Invitations
-- [ ] Add base docs site
+- [x] Add base docs site
 - [x] Add Codecov
+- [x] Add PyPI
