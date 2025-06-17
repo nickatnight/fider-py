@@ -38,7 +38,7 @@ class TagsService:
             >>> response = service.get_tags()
             >>> response
             FiderAPIResponse(
-                message="Successfully fetched data!",
+                message="Successfully fetched data.",
                 data=[
                     Tag(
                         id=1,

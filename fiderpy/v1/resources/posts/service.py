@@ -44,7 +44,7 @@ class PostsService:
             >>> response = service.get_posts(request=request)
             >>> response
             FiderAPIResponse(
-                message="Successfully fetched data!",
+                message="Successfully fetched data.",
                 data=[
                     Post(
                         id=1,
@@ -105,7 +105,7 @@ class PostsService:
             >>> response = service.get_post(request=request)
             >>> response
             FiderAPIResponse(
-                message="Successfully fetched data!",
+                message="Successfully fetched data.",
                 data=Post(
                     id=1,
                     number=1,

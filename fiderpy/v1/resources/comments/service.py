@@ -43,7 +43,7 @@ class CommentsService:
             >>> response = service.get_comments(request=request)
             >>> response
             FiderAPIResponse(
-                message="Successfully fetched data!",
+                message="Successfully fetched data.",
                 data=[
                     Comment(
                         id=1,
@@ -82,7 +82,7 @@ class CommentsService:
             >>> response = service.get_comment(request=request)
             >>> response
             FiderAPIResponse(
-                message="Successfully fetched data!",
+                message="Successfully fetched data.",
                 data=Comment(
                     id=1,
                     content="This is a comment",

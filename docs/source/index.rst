@@ -24,7 +24,8 @@ application.
     :maxdepth: 1
     :caption: Getting Started
 
-    getting_started/quick_start
+    getting_started/errors
+    getting_started/impersonation
     getting_started/installation
 
 .. _code_overview:

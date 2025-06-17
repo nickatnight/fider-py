@@ -39,7 +39,7 @@ class UsersService:
             >>> response = service.get_users()
             >>> response
             FiderAPIResponse(
-                message="Successfully fetched data!",
+                message="Successfully fetched data.",
                 data=[
                     User(
                         id=1,

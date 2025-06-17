@@ -5,7 +5,7 @@ from fiderpy.v1 import resources
 from fiderpy.v1.utils.http import RequestsClient
 
 
-__version__ = "0.0.4"
+__version__ = "0.0.5"
 logger = logging.getLogger(__name__)
 
 

@@ -2,6 +2,7 @@ from unittest.mock import MagicMock
 
 from fiderpy.v1.resources import PostsClient, PostsService
 from fiderpy.v1.resources.posts import request
+from fiderpy.v1.resources.posts.enums import PostsViewEnum
 from fiderpy.v1.utils.enums import FiderApiUrls
 
 
@@ -16,7 +17,7 @@ def test_service_get_posts_http_called_called_with_expected_args() -> None:
     # Assert
     mock_http.send.assert_called_once_with(
         path=FiderApiUrls.POSTS,
-        params={"limit": 30},
+        params={"limit": 30, "view": PostsViewEnum.ALL},
     )
 
 

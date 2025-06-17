@@ -24,7 +24,7 @@ def test_as_fider_success_with_adapter() -> None:
 
     # Assert
     assert isinstance(result, FiderAPIResponse)
-    assert result.message == "Successfully fetched data!"
+    assert result.message == "Successfully fetched data."
     assert result.data == "{'data': 'test'}"
     assert result.errors is None
 
@@ -40,7 +40,7 @@ def test_as_fider_success_without_adapter() -> None:
 
     # Assert
     assert isinstance(result, FiderAPIResponse)
-    assert result.message == "Successfully fetched data!"
+    assert result.message == "Successfully fetched data."
     assert result.data == {"data": "test"}
     assert result.errors is None
 

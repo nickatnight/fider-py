@@ -29,7 +29,6 @@ def as_fider(
             # Inject user_id into request dict if both are present in order to impersonate the user
             user_id = kwargs.get("user_id")
             request = kwargs.get("request")
-            message = "Successfully fetched data!"
             data: Optional[T] = None
             errors: Optional[list[FiderError]] = None
 
@@ -38,7 +37,9 @@ def as_fider(
 
             try:
                 response_json = func(*args, **kwargs)
+                message = "Successfully fetched data."
             except FiderRequestError as request_err:
+                message = "There was an error with your request."
                 if (
                     request_err.response.status_code >= 500
                     or request_err.response.status_code == 401
@@ -49,6 +50,7 @@ def as_fider(
                         obj=request_err.response.json()
                     )
             except Exception as err:
+                message = "Something went wrong."
                 errors = [FiderError(message=f"Unexpected error: {err}")]
             else:
                 data = cast(T, response_json)

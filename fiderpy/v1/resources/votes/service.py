@@ -38,7 +38,7 @@ class VotesService:
             >>> response = service.get_votes(request=request)
             >>> response
             FiderAPIResponse(
-                message="Successfully fetched data!",
+                message="Successfully fetched data.",
                 data=[
                     Vote(
                         id=1,

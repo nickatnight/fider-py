@@ -43,7 +43,7 @@ $ pip install fider-py
 # all API responses are wrapped in a FiderAPIResponse instance
 >>> client.posts.get_posts()  # default limit is 30
 FiderAPIResponse(
-    message="Successfully fetched data!",
+    message="Successfully fetched data.",
     data=[
         Post(
             id=1,

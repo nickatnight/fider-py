@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from typing import Optional
 
+from fiderpy.v1.resources.posts.enums import PostsViewEnum
+
 
 @dataclass
 class GetPostsRequest:
@@ -9,7 +11,7 @@ class GetPostsRequest:
     """
 
     query: Optional[str] = None
-    view: Optional[str] = None
+    view: Optional[str] = PostsViewEnum.ALL
     limit: Optional[int] = 30
     tags: Optional[str] = None
 
